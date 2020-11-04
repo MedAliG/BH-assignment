@@ -18,14 +18,14 @@ function App({ }: AppProps) {
       </Row>
       <VoteProvider>
         <Row>
-          <Col span={8}>
+          <Col span={7}>
             <VoteCreate />
           </Col>
           <Divider type="vertical" style={{ borderColor: '#000',height:100 }}  ></Divider>
-          <Col span={8}>
+          <Col span={7}>
             <VoteAnswer />
           </Col>
-          <Col span={8}>
+          <Col span={7}>
             <VoteResult />
           </Col>
         </Row>
