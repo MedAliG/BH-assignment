@@ -29,9 +29,7 @@ export const VoteProvider: React.FC = ({ children }) => {
         type: string,
         payload:
         InitialStateType['question']
-        | InitialStateType['answers'] 
-        
-        
+        | InitialStateType['answers']
     }): InitialStateType => {
         switch (action.type) {
             case 'UPDATE_ANSWERS':
@@ -45,16 +43,14 @@ export const VoteProvider: React.FC = ({ children }) => {
                     ...state,
                     question: action.payload as InitialStateType['question']
                 };
-                break;
-            
+                break;            
         }
         return state;
     };
 
     let initialState = {
         question: "",
-        answers: [],
-        
+        answers: []        
     };
 
     let [state, dispatch] = useReducer(reducer, initialState);
