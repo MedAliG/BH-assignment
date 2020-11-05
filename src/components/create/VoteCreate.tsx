@@ -3,7 +3,7 @@ import { Input, Row, Col, Button, Form, message } from 'antd';
 import { VoteContext } from '../../context';
 import type { VOTE_ANSWER } from '../../Vote.types';
 import { VoteCreateOption } from './VoteCreateOption';
-
+import './voteCreateStyle.css'
 type Props = {};
 
 type State = {
@@ -46,43 +46,52 @@ const VoteCreate = (props: Props) => {
 
     return (
         <>
-            <Row>
-                <Col span={20}>
-                    <Input placeholder="Question?" maxLength={80} onChange={HandleQuestionUpdate} allowClear />
-                </Col>
-            </Row>
-            <Row gutter={[4, 4]}>
-                {
-                    voteState.answers.map((answer: VOTE_ANSWER) => {
-                        return <VoteCreateOption key={answer.id} answer={answer} />;
-                    })
-                }
-            </Row>
-            {
-                (voteState.answers.length < 10) &&
-                <Form form={form} onFinish={handleCreateOption}>
-                    <Row gutter={[4, 4]}>
-                        <Col span={20}>
-                            <Form.Item name="answer">
-                                <Input placeholder="Answer ..." />
-                            </Form.Item>
-                        </Col>
-                        <Col span={4}>
-                            <Button
-                                type="primary"
-                                htmlType="submit">
-                                Add
+            <div className="voteCreate-Container">
+                <Row justify="center">
+                    <Col span={18} >
+                        <Input placeholder="Question?" className="voteCreate-input-question" maxLength={80} onChange={HandleQuestionUpdate} allowClear bordered={false} />
+                    </Col>
+                </Row>
+
+                <Row justify="center" className="voteCreate-options-container">
+                    {
+                        voteState.answers.map((answer: VOTE_ANSWER) => {
+                            return <VoteCreateOption key={answer.id} answer={answer} />;
+                        })
+                    }
+                </Row>
+                <Row justify="center" className="voteCreate-option-add-container">
+                    <Col span={18}>
+                        {
+                            (voteState.answers.length < 10) &&
+                            <Form form={form} onFinish={handleCreateOption}>
+                                <Row gutter={[4, 4]}>
+                                    <Col span={20}>
+                                        <Form.Item name="answer">
+                                            <Input className="voteCreate-option-add-input" placeholder="Answer ..." />
+                                        </Form.Item>
+                                    </Col>
+                                    <Col span={4}>
+                                        <Button
+                                            className="voteCreate-option-add-btn"
+                                            type="primary"
+                                            htmlType="submit">
+                                            Add
                                 </Button>
-                        </Col>
-                    </Row>
-                </Form>
-            }
-            <Row gutter={[4, 4]}>
-                <Col span={20}>{`${voteState.answers.length}/10 possible answers`}</Col>
-                <Col span={8} >
-                    <Button onClick={handleResetOnClickEvent}> Reset </Button>
-                </Col>
-            </Row>
+                                    </Col>
+                                </Row>
+                            </Form>
+                        }
+                    </Col>
+                </Row>
+
+                <Row className="voteCreate-option-count-container" >
+                    <Col span={16} offset={1}><h3 className="voteCreate-option-count-text">{`${voteState.answers.length}/10 possible answers`}</h3></Col>
+                    <Col span={4} >
+                        <Button onClick={handleResetOnClickEvent} className="voteCreate-reset-btn"> Reset </Button>
+                    </Col>
+                </Row>
+            </div>
         </>
     );
 };

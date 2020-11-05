@@ -1,0 +1,90 @@
+.voteCreate-options-row{
+    margin-top: 5px;
+}
+
+.voteCreate-input-option .ant-input{
+    background-color: #272B38;
+    
+    
+}
+.voteCreate-input-option{
+    background-color: #272B38;
+    color: white;
+    border-color: #151923;
+    
+    
+}
+
+.voteCreate-input-option:last-child{
+    background-color: #272B38;
+    
+}
+.voteCreate-input-deleteBtn{
+    margin-left: 10px;
+    background-color:#151923 ;
+    color: white;
+    border-color: #151923 ;
+}
+
+.voteCreate-input-deleteBtn:hover{
+    background-color:#272B38 ;
+    color: red;
+    border-color: #272B38 ;
+}
+
+.voteCreate-option-add-container{
+    margin-top: 20px;
+}
+
+.voteCreate-option-add-input .ant-input{
+    background-color: #272B38;
+    
+    
+}
+.voteCreate-option-add-input{
+    background-color: #272B38;
+    color: white;
+    border-color: #151923;
+    
+    
+}
+
+.voteCreate-option-add-input:last-child{
+    background-color: #272B38;
+    
+}
+.voteCreate-input-deleteBtn{
+    margin-left: 10px;
+    background-color:#151923 ;
+    color: white;
+    border-color: #151923 ;
+}
+
+.voteCreate-input-deleteBtn:hover{
+    background-color:#272B38 ;
+    color: red;
+    border-color: #272B38 ;
+}
+
+.voteCreate-option-add-btn{
+    border: transparent;
+}
+
+.voteCreate-option-count-container{
+    margin-top: 10px;
+
+}
+.voteCreate-option-count-text{
+
+    color: wheat;
+}
+.voteCreate-reset-btn{
+    color:white;
+    background-color: #151923;
+}
+
+.voteCreate-reset-btn:hover{
+    border-color: #3e465f ;
+    color:white;
+    background-color: #3e465f;
+}

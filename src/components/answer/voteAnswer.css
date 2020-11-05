@@ -1,0 +1,40 @@
+.voteAnswer-Container{
+    padding-top: 15%;
+    padding-left: 3%;
+    padding-right: 3%;
+    height: 100%;
+    border: black;
+    border-radius: 0 1 0 0  ;
+    background-color:   #262A38;
+}
+.voteAnswer-pre-title{
+    
+    color: White;
+}
+.voteAnswer-pre-emote{
+    margin-top: 18%;
+    color: white;
+}
+.voteAnswer-question{
+    color: white;
+}
+.voteAnswer-option{
+    color: white;
+    margin-top: 10px;
+    margin-left: 20%;
+    
+}
+.VoteAnswer-option-radio{
+    color:white
+}
+
+.voteAnswer-vote-btn{
+    color:white;
+    background-color: #151923;
+}
+
+.voteAnswer-vote-btn:hover{
+    border-color: #3e465f ;
+    color:white;
+    background-color: #3e465f;
+}

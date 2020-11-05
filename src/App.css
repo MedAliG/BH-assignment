@@ -1,3 +1,19 @@
+body{
+    font-family: 'Titillium Web', sans-serif;
+    /*background-color: #21242E;*/
+}
+.top-bar{
+    background-color: #151923;
+}
+.top-bar-title{
+    color: white;
+}
+.top-bar-divider{
+    color: #5E6168;
+}
+.top-bar-divider-title{
+    color: white;
+}
 .align-center {
     text-align: center;
 }

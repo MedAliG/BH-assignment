@@ -3,7 +3,7 @@ import { Input, Row, Col, Button, message } from 'antd';
 import { VoteAnswer } from '../answer/VoteAnswer';
 import { VoteContext } from '../../context';
 import type { VOTE_ANSWER } from '../../Vote.types';
-
+import './voteCreateOption.css'
 type Props = {
     answer: VOTE_ANSWER
 }
@@ -28,15 +28,15 @@ const VoteCreateOption = (props: Props) => {
     };
 
     return (
-        <Col span={24}>
-            <Row>
+        <Col span={18}  >
+            <Row className="voteCreate-options-row">
                 <Col span={20}>
-                    <Input value={props.answer.value} />
+                    <Input value={props.answer.value} className="voteCreate-input-option" />
                 </Col>
                 {
                     (voteState.answers.length > 2) &&
                         <Col span={4}>
-                            <Button onClick={handleDeleteOption}>{"X"}</Button>
+                            <Button className="voteCreate-input-deleteBtn" onClick={handleDeleteOption}>{"X"}</Button>
                         </Col>
                 }
             </Row>

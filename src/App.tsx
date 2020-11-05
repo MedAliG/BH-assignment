@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Row,Divider } from 'antd';
-import { VoteCreate, VoteAnswer, VoteResult } from './components';
+import { Col, Row, Divider } from 'antd';
+import { VoteCreate, VoteAnswer, VoteResult, HeaderBar } from './components';
 import { VoteProvider } from './context';
 import './App.css';
 import 'antd/dist/antd.css';
@@ -12,20 +12,20 @@ function App({ }: AppProps) {
 
   return (
     <>
-      <Row className="header">
-        <Col offset={2} ><h1>Sir vote</h1></Col>
-        <Divider style={{ borderColor: '#000' }}  plain orientation="left">Question</Divider>
+      <HeaderBar />
+      <Row className="top-bar">
+        <Col offset={1} ><h1 className="top-bar-title">Sir vote</h1></Col>
+        <Divider style={{ borderColor: '#5E6168' }} className="top-bar-divider" plain orientation="left"><p className="top-bar-divider-title">POLL</p></Divider>
       </Row>
       <VoteProvider>
         <Row>
-          <Col span={7}>
+          <Col span={6}>
             <VoteCreate />
           </Col>
-          <Divider type="vertical" style={{ borderColor: '#000',height:100 }}  ></Divider>
-          <Col span={7}>
+          <Col span={9}>
             <VoteAnswer />
           </Col>
-          <Col span={7}>
+          <Col span={9}>
             <VoteResult />
           </Col>
         </Row>
