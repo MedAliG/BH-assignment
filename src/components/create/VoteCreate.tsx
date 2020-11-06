@@ -1,22 +1,26 @@
 import React, { useState, useContext } from 'react';
+import './voteCreateStyle.css'
 import { Input, Row, Col, Button, Form, message } from 'antd';
 import { VoteContext } from '../../context';
 import type { VOTE_ANSWER } from '../../Vote.types';
 import { VoteCreateOption } from './VoteCreateOption';
-import './voteCreateStyle.css'
+
 type Props = {};
 
 type State = {
-    answersNumber: number
+    answersNumber: number,
+    lengthState : boolean
 };
 
 const VoteCreate = (props: Props) => {
-    let errorMsg = "";
+    
     const [form] = Form.useForm();
     const { voteState, voteDispatch } = useContext(VoteContext);
 
     const [compState, setCompState] = useState<State>({
-        answersNumber: 2
+        answersNumber: 2,
+        lengthState: false
+        
     });
 
     const handleCreateOption = (values: { answer: string }) => {
@@ -28,20 +32,26 @@ const VoteCreate = (props: Props) => {
         message.success('Option added successufully');
     };
     const HandleQuestionUpdate = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if(e.target.value.length>80){
+            compState.lengthState = true;
+        }
         voteDispatch({
             type: 'UPDATE_QUESTION',
             payload: e.target.value
         });
     };
     const handleResetOnClickEvent = (values: any) => {
+        
+        voteDispatch({
+            type: 'UPDATE_QUESTION',
+            payload: " "
+        });
         voteDispatch({
             type: 'UPDATE_ANSWERS',
             payload: []
         });
-        voteDispatch({
-            type: 'UPDATE_QUESTION',
-            payload: ""
-        });
+        
+        
     }
 
     return (
@@ -49,7 +59,7 @@ const VoteCreate = (props: Props) => {
             <div className="voteCreate-Container">
                 <Row justify="center">
                     <Col span={18} >
-                        <Input placeholder="Question?" className="voteCreate-input-question" maxLength={80} onChange={HandleQuestionUpdate} allowClear bordered={false} />
+                        <Input placeholder="Question?" className="voteCreate-input-question" maxLength={85} onChange={HandleQuestionUpdate} allowClear bordered={false} disabled={compState.lengthState}  />
                     </Col>
                 </Row>
 

@@ -3,33 +3,33 @@
 }
 
 .voteCreate-input-option .ant-input{
-    background-color: #272B38;
+    background-color: #272B38 !important;
     
     
 }
 .voteCreate-input-option{
     background-color: #272B38;
-    color: white;
-    border-color: #151923;
+    color: white !important; 
+    border-color: #151923 !important;
     
     
 }
 
 .voteCreate-input-option:last-child{
-    background-color: #272B38;
+    background-color: #272B38 !important;
     
 }
 .voteCreate-input-deleteBtn{
     margin-left: 10px;
-    background-color:#151923 ;
-    color: white;
-    border-color: #151923 ;
+    background-color:#151923 !important;
+    color: white !important;
+    border-color: #151923 !important;
 }
 
 .voteCreate-input-deleteBtn:hover{
-    background-color:#272B38 ;
-    color: red;
-    border-color: #272B38 ;
+    background-color:#272B38 !important;
+    color: red !important;
+    border-color: #272B38 !important;
 }
 
 .voteCreate-option-add-container{
@@ -37,37 +37,37 @@
 }
 
 .voteCreate-option-add-input .ant-input{
-    background-color: #272B38;
+    background-color: #272B38 !important;
     
     
 }
 .voteCreate-option-add-input{
-    background-color: #272B38;
-    color: white;
-    border-color: #151923;
+    background-color: #272B38 !important;
+    color: white !important;
+    border-color: #151923 !important;
     
     
 }
 
 .voteCreate-option-add-input:last-child{
-    background-color: #272B38;
+    background-color: #272B38 !important;
     
 }
 .voteCreate-input-deleteBtn{
     margin-left: 10px;
-    background-color:#151923 ;
-    color: white;
-    border-color: #151923 ;
+    background-color:#151923 !important;
+    color: white !important;
+    border-color: #151923 !important;
 }
 
 .voteCreate-input-deleteBtn:hover{
-    background-color:#272B38 ;
-    color: red;
-    border-color: #272B38 ;
+    background-color:#272B38 !important;
+    color: red !important;
+    border-color: #272B38 !important;
 }
 
 .voteCreate-option-add-btn{
-    border: transparent;
+    border: transparent !important;
 }
 
 .voteCreate-option-count-container{
@@ -76,15 +76,15 @@
 }
 .voteCreate-option-count-text{
 
-    color: wheat;
+    color: wheat !important;
 }
 .voteCreate-reset-btn{
-    color:white;
-    background-color: #151923;
+    color:white !important;
+    background-color: #151923 !important;
 }
 
 .voteCreate-reset-btn:hover{
-    border-color: #3e465f ;
-    color:white;
-    background-color: #3e465f;
+    border-color: #3e465f !important;
+    color:white !important;
+    background-color: #3e465f !important;
 }

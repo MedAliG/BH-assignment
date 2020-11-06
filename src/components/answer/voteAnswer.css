@@ -13,28 +13,28 @@
 }
 .voteAnswer-pre-emote{
     margin-top: 18%;
-    color: white;
+    color: white !important;
 }
 .voteAnswer-question{
-    color: white;
+    color: white !important;
 }
 .voteAnswer-option{
-    color: white;
+    color: white !important;
     margin-top: 10px;
     margin-left: 20%;
     
 }
 .VoteAnswer-option-radio{
-    color:white
+    color:white !important
 }
 
 .voteAnswer-vote-btn{
-    color:white;
-    background-color: #151923;
+    color:white !important;
+    background-color: #151923 !important;
 }
 
 .voteAnswer-vote-btn:hover{
-    border-color: #3e465f ;
-    color:white;
-    background-color: #3e465f;
+    border-color: #3e465f  !important;
+    color:white !important;
+    background-color: #3e465f !important;
 }

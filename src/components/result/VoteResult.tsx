@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react';
+import "./voteResultStyle.css"
 import { VoteContext } from '../../context';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryLabel } from 'victory';
 import { Row, Col, Typography, Button } from 'antd';
 import type { VOTE_ANSWER } from 'src/Vote.types';
-import "./voteResultStyle.css"
+
 
 type Props = {};
 
@@ -21,7 +22,7 @@ const VoteResult = (props: Props) => {
                     <div className="voteResult-container">
                         <Col span={22} offset={2}>
                             <Row>
-                                <h4 className="voteResult-chart-title">{`${voteState.question}`} results    </h4>
+                                <h4 className="voteResult-chart-title">"{`${voteState.question}`}" results    </h4>
                             </Row>
 
                             <VictoryChart
