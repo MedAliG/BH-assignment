@@ -29,8 +29,6 @@ const VoteAnswer = (props: Props) => {
                     })
                 ]
             });
-        } else {
-
         }
     };
 
