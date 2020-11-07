@@ -1,15 +1,12 @@
-import React, { useState, useContext } from 'react';
-import './voteCreateOption.css'
-import { Input, Row, Col, Button, message } from 'antd';
-import { VoteAnswer } from '../answer/VoteAnswer';
-import { VoteContext } from '../../context';
-import type { VOTE_ANSWER } from '../../Vote.types';
+import React, { useContext } from 'react';
+import { Input, Row, Col, Button } from 'antd';
+import { VoteContext } from '../../../context';
+import type { VOTE_ANSWER } from '../../../Vote.types';
+import './VoteCreateOption.css';
 
 type Props = {
     answer: VOTE_ANSWER
-}
-
-type State = {};
+};
 
 const VoteCreateOption = (props: Props) => {
     const { voteState, voteDispatch } = useContext(VoteContext);

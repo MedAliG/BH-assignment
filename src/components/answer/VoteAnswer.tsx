@@ -1,16 +1,13 @@
-import { Row, Col, Button, Radio, Form, Typography } from 'antd';
-import React, { useState, useContext } from 'react';
+import { Row, Button, Radio, Form } from 'antd';
+import React, { useContext } from 'react';
 import { VoteContext } from '../../context';
 import type { VOTE_ANSWER } from '../../Vote.types';
-import './voteAnswer.css';
+import './VoteAnswer.css';
 
 type Props = {};
 
-type State = {};
-
 const VoteAnswer = (props: Props) => {
     const { voteState, voteDispatch } = useContext(VoteContext);
-    const { Title } = Typography;
     const [answerForm] = Form.useForm();
 
     const HandleOnClickEvent = (values: any) => {
@@ -38,7 +35,7 @@ const VoteAnswer = (props: Props) => {
     };
 
     return (
-        (voteState.answers.length > 1) ?
+        (voteState.answers.length > 1 && voteState.question.length) ?
             <>
                 <div className="voteAnswer-Container">
                     <Row>
@@ -49,7 +46,10 @@ const VoteAnswer = (props: Props) => {
                             <Radio.Group>
                                 {
                                     voteState.answers.map((answer: VOTE_ANSWER) => {
-                                        return <Row className="voteAnswer-option"> <Radio className="VoteAnswer-option-radio" key={answer.id} value={answer.id}>{answer.value}</Radio></Row>;
+                                        return (
+                                            <Row key={answer.id} className="voteAnswer-option">
+                                                <Radio className="VoteAnswer-option-radio" key={answer.id} value={answer.id}>{answer.value}</Radio>
+                                            </Row>);
                                     })
                                 }
                             </Radio.Group>
@@ -63,7 +63,7 @@ const VoteAnswer = (props: Props) => {
             <>
                 <div className="voteAnswer-Container">
                     <Row justify="center">
-                        <h1 className="voteAnswer-pre-emote">ヾ( ￣O￣)ツ</h1>
+                        <h1 className="voteAnswer-pre-emote">(๑￫‿ฺ￩๑)</h1>
                     </Row>
                     <Row justify="center">
                         <h3 className="voteAnswer-pre-title" >

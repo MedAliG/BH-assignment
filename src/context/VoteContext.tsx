@@ -1,16 +1,15 @@
-import React, { useReducer, useContext, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import type { VOTE_ANSWER } from '../Vote.types';
 
 type InitialStateType = {
     question: string,
     answers: VOTE_ANSWER[],
-    
+
 };
 
 const initialState: InitialStateType = {
     question: "",
-    answers: [],
-    
+    answers: []
 };
 
 export type VoteContextProps = {
@@ -43,19 +42,17 @@ export const VoteProvider: React.FC = ({ children }) => {
                     ...state,
                     question: action.payload as InitialStateType['question']
                 };
-                break;            
+                break;
         }
         return state;
     };
 
     let initialState = {
         question: "",
-        answers: []        
+        answers: []
     };
 
     let [state, dispatch] = useReducer(reducer, initialState);
-
-    console.info('RENDER : BeaconsContext');
 
     return (
         <VoteContext.Provider value={{ voteState: state, voteDispatch: dispatch }}>

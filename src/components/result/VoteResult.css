@@ -1,0 +1,17 @@
+.voteResult-container {
+  height: 100%;
+  padding-top: 15%;
+  background-color: #21242e;
+}
+
+.voteResult-pre-title {
+  margin-top: 20%;
+  color: white;
+}
+.voteResult-chart-title {
+  color: white;
+  text-align: center;
+}
+.voteResult-chart-count {
+  color: white;
+}

@@ -1,38 +1,42 @@
 import React, { useState, useContext } from 'react';
-import './voteCreateStyle.css'
 import { Input, Row, Col, Button, Form, message } from 'antd';
 import { VoteContext } from '../../context';
 import type { VOTE_ANSWER } from '../../Vote.types';
-import { VoteCreateOption } from './VoteCreateOption';
+import { VoteCreateOption } from './option/VoteCreateOption';
+import './VoteCreate.css';
 
 type Props = {};
 
 type State = {
     answersNumber: number,
-    lengthState : boolean
+    lengthState: boolean
 };
 
 const VoteCreate = (props: Props) => {
-    
+
     const [form] = Form.useForm();
     const { voteState, voteDispatch } = useContext(VoteContext);
 
-    const [compState, setCompState] = useState<State>({
+    const [compState] = useState<State>({
         answersNumber: 2,
         lengthState: false
-        
+
     });
 
     const handleCreateOption = (values: { answer: string }) => {
-        voteDispatch({
-            type: 'UPDATE_ANSWERS',
-            payload: [...voteState.answers, { value: values.answer, id: `${new Date().getTime()}`, count: 0 }]
-        });
-        form.resetFields();
-        message.success('Option added successufully');
+        if (values.answer && values.answer.length) {
+            voteDispatch({
+                type: 'UPDATE_ANSWERS',
+                payload: [...voteState.answers, { value: values.answer, id: `${new Date().getTime()}`, count: 0 }]
+            });
+            form.resetFields();
+            message.success('Option added successufully');
+        } else {
+            message.error('Please provide an answer');
+        }
     };
     const HandleQuestionUpdate = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if(e.target.value.length>80){
+        if (e.target.value.length > 80) {
             compState.lengthState = true;
         }
         voteDispatch({
@@ -41,17 +45,17 @@ const VoteCreate = (props: Props) => {
         });
     };
     const handleResetOnClickEvent = (values: any) => {
-        
+
         voteDispatch({
             type: 'UPDATE_QUESTION',
-            payload: " "
+            payload: ""
         });
         voteDispatch({
             type: 'UPDATE_ANSWERS',
             payload: []
         });
-        
-        
+
+
     }
 
     return (
@@ -59,7 +63,15 @@ const VoteCreate = (props: Props) => {
             <div className="voteCreate-Container">
                 <Row justify="center">
                     <Col span={18} >
-                        <Input placeholder="Question?" className="voteCreate-input-question" maxLength={85} onChange={HandleQuestionUpdate} allowClear bordered={false} disabled={compState.lengthState}  />
+                        <Input
+                            value={voteState.question}
+                            placeholder="Question?"
+                            className="voteCreate-input-question"
+                            maxLength={85}
+                            onChange={HandleQuestionUpdate}
+                            allowClear bordered={false}
+                            disabled={compState.lengthState}
+                        />
                     </Col>
                 </Row>
 

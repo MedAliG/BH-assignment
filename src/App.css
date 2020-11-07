@@ -1,19 +1,95 @@
-body{
-    font-family: 'Titillium Web', sans-serif;
-    /*background-color: #21242E;*/
+body {
+  font-family: "Titillium Web", sans-serif;
+  /*background-color: #21242E;*/
 }
-.top-bar{
-    background-color: #151923;
+.title-divider{
+  height: 22vh;
+  background-color: #151923;
+  text-align: center;
+  padding-top: 20px;
 }
-.top-bar-title{
-    color: white;
+.title-divider-text-1{
+  color: #FDA71B;
+  font-size: 28px;
+  font-weight: bold;
 }
-.top-bar-divider{
-    color: #5E6168;
+
+.title-divider-text-2{
+  color: white;
+  font-size: 16px;
 }
-.top-bar-divider-title{
-    color: white;
+
+
+.top-bar {
+  background-color: #151923;
+  height: 70vh;
+  width: 100%;
+  background-image: url("https://cdn.sanity.io/images/6y42nq7f/production/38b9b107e8d101e564ee5897c0133c81347245ee-1900x1267.jpg");
+}
+.top-bar-title {
+  color: white;
+}
+.top-bar-divider {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.top-bar-divider-title {
+  color: white;
 }
 .align-center {
-    text-align: center;
+  text-align: center;
+}
+.top-bar-title-container{
+  margin-top: 2%;
+}tp
+.top-bar-banner{
+  max-width: 100%;
+  height: auto;
+}
+
+.top-bar-container{
+  background-color: rgba(0, 0, 0, .5);
+  height: 100%;
+  width: 100%;
+  
+}
+
+.top-bar-content{
+  padding-top: 10%;
+  margin-left: 5%;
+}
+
+.top-bar-title{
+  color: white;
+}
+
+.top-bar-title-1{
+  font-size: 40px;
+  font-weight: bold;
+}
+.top-bar-button{
+  margin-top: 20px;
+  background-color: transparent!important;
+  color: white !important;
+
+}
+
+.header {
+  margin: 0 !important;
+  background-color: black;
+  color: black;
+  width: 100%;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 10;
+  
+}
+.logo {
+  width: 60px;
+  width: 60px;
+}
+
+.title {
+  color: white;
 }
