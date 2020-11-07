@@ -33,4 +33,6 @@ https://medali-assignment-build.herokuapp.com/
 ## Note
 This app works offline, thanks to [PWA](https://create-react-app.dev/docs/making-a-progressive-web-app/) Progressive web applications.
 
+Used [Antd](https://ant.design/) as a components library.
 
+ 
