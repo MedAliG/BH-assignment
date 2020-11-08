@@ -2,11 +2,9 @@
 
 ## Getting started
 
-You can view a live demo over at https://react-redux.realworld.io/
-
 To get the frontend running locally:
 
-- Clone this repo
+- Clone this repository
 - Install all required dependencies:
 ```bash
 npm install
@@ -22,7 +20,7 @@ npm start
 
 
 ## Deployment
-Deployment was made with [Heroku]()
+Deployment was made with [Heroku](https://heroku.com/)
 
 Developement project(Linked to the repository):
 https://medali-assignment.herokuapp.com/
